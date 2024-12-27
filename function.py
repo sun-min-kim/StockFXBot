@@ -1,9 +1,12 @@
-from config import API_KEY
-from plyer import notification
-
+import os
 import requests
+import logging
 
 BASE_URL = "https://www.alphavantage.co/query"
+
+# Function to get API key
+def get_api_key():
+    return os.getenv("API_KEY")
 
 # Function to get stock price
 def get_stock_price(symbol):
@@ -12,7 +15,7 @@ def get_stock_price(symbol):
         "function": "TIME_SERIES_INTRADAY",
         "symbol": symbol,
         "interval": "1min",
-        "apikey": API_KEY,
+        "apikey": get_api_key(),
     }
 
     try:
@@ -45,12 +48,14 @@ def read_file(filename):
     
     return stocks
 
-# Send macOS notification 
-def send_notification(title, message):
+# Logging configuration setup
+logging.basicConfig(
+    filename='notifications.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
-    notification.notify(
-        title=title,
-        message=message,
-        app_name='Stock Tracker',
-        timeout=10  # Duration in seconds
-    )
+# Send notification 
+def send_notification(title, message):
+    # Log notification to log file
+    logging.info(f"{title}: {message}")

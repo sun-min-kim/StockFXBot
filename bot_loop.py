@@ -1,12 +1,13 @@
-from config import API_KEY
 from function import get_stock_price, read_file, send_notification
 
 import time
 
-
 # Main function
 def track_loop():
     stocks = read_file('stocks.txt') # Dictionary of stock symbols and limits
+
+    print(f"Stock tracking bot has been activated")
+    send_notification("Bot Activated", "Stock tracking bot has been activated")
 
     while True:
 

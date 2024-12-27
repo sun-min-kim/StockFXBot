@@ -48,7 +48,9 @@ To install and run the StockFXBot, follow these steps:
 
 To run the bot, use the following command:
     
-    ```python3 bot_loop.py```
+    ```bash
+    python3 bot_loop.py
+    ```
 
 Once the bot is activated, it will start tracking the stocks specified in `stocks.txt` and will log notifications to the `notifications.log` file based on the limits you set.
 

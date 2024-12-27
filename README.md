@@ -19,6 +19,7 @@ StockFXBot allows users to track stock prices and receive notifications when sto
 To install and run the StockFXBot, follow these steps:
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/StockFXBot.git
    cd StockFXBot
@@ -47,7 +48,7 @@ To install and run the StockFXBot, follow these steps:
 
 To run the bot, use the following command:
 
-    ```
+    ```bash
     python3 bot_loop.py
     ```
 
@@ -67,9 +68,9 @@ Once the bot is activated, it will start tracking the stocks specified in `stock
 
 ## Requirements
 
-• Python 3.9 or higher
+- Python 3.9 or higher
 
-• Required Python packages listed in `requirements.txt`
+- Required Python packages listed in `requirements.txt`
 
 ## Docker Usage
 

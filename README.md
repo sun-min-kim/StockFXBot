@@ -47,7 +47,6 @@ To install and run the StockFXBot, follow these steps:
 ## Usage
 
 To run the bot, use the following command:
-
     ```bash
     python3 bot_loop.py
     ```
